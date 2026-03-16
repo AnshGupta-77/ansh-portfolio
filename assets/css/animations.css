@@ -26,31 +26,46 @@
     transform: translateY(0);
 }
 
-/* Project Card Hover Effects */
-.project-card {
+/* Horizontal Project Gallery */
+.project-gallery {
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    height: 500px;
+}
+
+.project-track {
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+    will-change: transform;
+}
+
+.project-card {
+    flex-shrink: 0;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card .project-image-container {
+/* Project Card Hover Effects */
+.project-image-container {
     position: relative;
     overflow: hidden;
+    height: 192px;
+    border-radius: 8px 8px 0 0;
 }
 
-.project-card .project-image {
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
-.project-card:hover .project-image {
-    transform: scale(1.1);
-}
-
-.project-card .project-overlay {
+.project-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -62,18 +77,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    border-radius: 8px 8px 0 0;
 }
 
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-card .project-actions {
+.project-actions {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
                 transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
 }
 
 .project-card:hover .project-actions {
@@ -81,9 +100,44 @@
     transform: translateY(0);
 }
 
+/* Scroll Dots */
+.scroll-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3b82f6;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-dot.active {
+    opacity: 1;
+}
+
+/* Skill Progress Bars */
+.skill-progress {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-progress.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-bar {
+    width: 0%;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
 /* Contact Section Glow Effects */
 .contact-glow {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .contact-glow:hover {
@@ -101,14 +155,32 @@
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.6),
                 0 0 30px rgba(59, 130, 246, 0.4);
     color: #60a5fa;
+    transform: translateY(-1px);
 }
 
 /* Mobile Optimization */
 @media (max-width: 767px) {
     .hero-animate,
-    .scroll-animate {
+    .scroll-animate,
+    .skill-progress {
         transition: opacity 0.4s ease-in-out;
         transform: none !important;
+    }
+    
+    .project-gallery {
+        height: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .project-track {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .project-card {
+        width: 100%;
+        flex-shrink: 1;
     }
     
     .project-card:hover .project-image {
@@ -117,6 +189,11 @@
     
     .contact-glow:hover {
         box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        transform: none;
+    }
+    
+    .glow-icon:hover {
+        box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
         transform: none;
     }
 }
@@ -129,7 +206,7 @@
 }
 
 /* Particle Background Container */
-#particles-js {
+#tsparticles {
     position: absolute;
     top: 0;
     left: 0;

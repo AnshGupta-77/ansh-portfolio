@@ -1,4 +1,4 @@
-// ScrollAnimations.js - GSAP ScrollTrigger Animations
+// GSAP ScrollTrigger Animations
 class ScrollAnimations {
     constructor() {
         this.isMobile = window.innerWidth < 768;
@@ -11,17 +11,14 @@ class ScrollAnimations {
     }
 
     loadGSAP() {
-        // Check if GSAP is already loaded
         if (typeof gsap !== 'undefined') {
             this.setupAnimations();
             return;
         }
 
-        // Load GSAP from CDN
         const script = document.createElement('script');
         script.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
         script.onload = () => {
-            // Load ScrollTrigger
             const scrollTriggerScript = document.createElement('script');
             scrollTriggerScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js';
             scrollTriggerScript.onload = () => {
@@ -38,6 +35,12 @@ class ScrollAnimations {
 
         // Scroll-triggered animations for sections
         this.setupScrollAnimations();
+
+        // Horizontal scroll for projects
+        this.setupHorizontalScroll();
+
+        // Animate skill bars
+        this.animateSkillBars();
 
         // Handle resize
         this.handleResize();
@@ -64,7 +67,6 @@ class ScrollAnimations {
 
     setupScrollAnimations() {
         if (this.isMobile) {
-            // Simple fade animations for mobile
             this.setupMobileAnimations();
             return;
         }
@@ -74,18 +76,14 @@ class ScrollAnimations {
             '#about',
             '#skills', 
             '#projects',
-            '#education',
-            '#experience',
             '#certifications',
+            '#experience',
             '#contact'
         ];
 
         sections.forEach(selector => {
             const element = document.querySelector(selector);
             if (element) {
-                // Add animation class
-                element.classList.add('scroll-animate', 'gpu-accelerated');
-
                 gsap.fromTo(element,
                     {
                         opacity: 0,
@@ -107,25 +105,68 @@ class ScrollAnimations {
                 );
             }
         });
+    }
 
-        // Animate project cards individually
-        const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach((card, index) => {
-            card.classList.add('scroll-animate', 'gpu-accelerated');
+    setupHorizontalScroll() {
+        if (this.isMobile) return;
+
+        const projectTrack = document.querySelector('.project-track');
+        const scrollDots = document.querySelectorAll('.scroll-dot');
+        if (!projectTrack) return;
+
+        let currentIndex = 0;
+        const totalProjects = 3;
+
+        // Update scroll position based on page scroll
+        gsap.to(projectTrack, {
+            x: 0,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#projects',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    currentIndex = Math.floor(progress * (totalProjects - 1));
+                    this.updateScrollDots(currentIndex, scrollDots);
+                    
+                    // Move track horizontally
+                    gsap.set(projectTrack, {
+                        x: -currentIndex * (352 + 32) // card width + gap
+                    });
+                }
+            }
+        });
+    }
+
+    updateScrollDots(index, dots) {
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.style.opacity = '1';
+            } else {
+                dot.style.opacity = '0.5';
+            }
+        });
+    }
+
+    animateSkillBars() {
+        const skillBars = document.querySelectorAll('.skill-bar');
+        
+        skillBars.forEach((bar, index) => {
+            const targetWidth = bar.getAttribute('data-width');
             
-            gsap.fromTo(card,
+            gsap.fromTo(bar,
                 {
-                    opacity: 0,
-                    y: 30
+                    width: '0%'
                 },
                 {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.5,
+                    width: targetWidth,
+                    duration: 1,
                     delay: index * 0.1,
                     ease: 'power2.out',
                     scrollTrigger: {
-                        trigger: card,
+                        trigger: bar,
                         start: 'top 85%',
                         end: 'bottom 15%',
                         toggleActions: 'play none none none',
@@ -168,7 +209,6 @@ class ScrollAnimations {
             resizeTimer = setTimeout(() => {
                 this.isMobile = window.innerWidth < 768;
                 
-                // Refresh ScrollTrigger on resize
                 if (typeof ScrollTrigger !== 'undefined') {
                     ScrollTrigger.refresh();
                 }
