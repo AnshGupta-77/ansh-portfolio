@@ -1,0 +1,156 @@
+/* Performance optimized animations */
+
+/* Hero Section Animations */
+.hero-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Project Card Hover Effects */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card .project-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card .project-image {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+}
+
+.project-card .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card .project-actions {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.project-card:hover .project-actions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Section Glow Effects */
+.contact-glow {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-glow:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
+                0 0 40px rgba(59, 130, 246, 0.3),
+                0 0 60px rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
+}
+
+.glow-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-icon:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6),
+                0 0 30px rgba(59, 130, 246, 0.4);
+    color: #60a5fa;
+}
+
+/* Mobile Optimization */
+@media (max-width: 767px) {
+    .hero-animate,
+    .scroll-animate {
+        transition: opacity 0.4s ease-in-out;
+        transform: none !important;
+    }
+    
+    .project-card:hover .project-image {
+        transform: scale(1.05);
+    }
+    
+    .contact-glow:hover {
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        transform: none;
+    }
+}
+
+/* GPU Accelerated Animations */
+.gpu-accelerated {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Particle Background Container */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
