@@ -3,11 +3,7 @@
     {
       "src": "*.html",
       "use": "@vercel/static"
-      
     }
-
-    {
+  ],
   "outputDirectory": "."
-    }
-  ]
 }
