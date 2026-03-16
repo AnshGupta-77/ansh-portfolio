@@ -474,6 +474,12 @@
         .project-card {
             overflow: hidden;
             position: relative;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
         }
 
         .project-image-container {
@@ -900,7 +906,7 @@
                     </p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="assets/files/Ansh_Gupta_Resume.pdf" download target="_blank" class="btn btn-secondary">Download Resume</a>
+                        <a href="assets/files/Ansh_Gupta_Resume.pdf" download target="_blank" rel="noopener noreferrer">Download Resume</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -1153,7 +1159,7 @@
                         <i class="bx bxl-linkedin"></i> LinkedIn
                     </a>
                 </div>
-                <a href="assets/files/Ansh_Gupta_Resume.pdf" download target="_blank" class="resume-btn">
+                <a href="assets/files/Ansh_Gupta_Resume.pdf" download target="_blank" rel="noopener noreferrer" class="resume-btn">
                     <i class="bx bx-download"></i> Download Resume
                 </a>
             </div>
@@ -1172,6 +1178,5 @@
     <script src="assets/js/particles.js"></script>
     <script src="assets/js/projectHover.js"></script>
     <script src="assets/js/scrollAnimations.js"></script>
-    <script src="assets/js/enhanced-interactions.js"></script>
 </body>
 </html>
