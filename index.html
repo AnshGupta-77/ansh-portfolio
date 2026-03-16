@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-    <meta
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      name="viewport"
-    />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
     <title>Ansh Gupta | Python Backend Developer & ML Enthusiast</title>
     <meta property="og:title" content="Ansh Gupta | Python Backend Developer & ML Enthusiast" />
     <meta property="og:locale" content="en_US" />
@@ -19,1021 +16,785 @@
     <meta property="og:image" content="assets/images/portfolio-preview.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@AnshGupta" />
-    <link
-      crossorigin="crossorigin"
-      href="https://fonts.gstatic.com"
-      rel="preconnect"
-    />
-    <link
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-      rel="preload"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      crossorigin="anonymous"
-      href="assets/styles/main.min.css"
-      media="screen"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/css/animations.css"
-      rel="stylesheet"
-    />
-    <script
-      defer
-      src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
-    ></script>
+    <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap" rel="preload" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="assets/styles/main.min.css" media="screen" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     
-    <!-- Dark Theme & Cursor Effects Styles -->
     <style>
-      :root {
-        --primary-dark: #0a0a0f;
-        --secondary-dark: #12121a;
-        --accent-cyan: #00d4ff;
-        --accent-green: #00ff88;
-        --text-light: #e0e0e0;
-        --text-muted: #888;
-        --card-bg: rgba(18, 18, 26, 0.8);
-      }
-      
-      * {
-        cursor: default;
-      }
-      
-      a, button, [role="button"], input, textarea, select, [onclick] {
-        cursor: none;
-      }
-      
-      /* Custom Cursor */
-      .custom-cursor {
-        width: 20px;
-        height: 20px;
-        border: 2px solid var(--accent-cyan);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        transition: transform 0.1s ease, background-color 0.2s ease;
-        mix-blend-mode: difference;
-      }
-      
-      .custom-cursor.hover {
-        transform: scale(2);
-        background-color: var(--accent-cyan);
-        opacity: 0.5;
-      }
-      
-      .cursor-trail {
-        width: 8px;
-        height: 8px;
-        background: var(--accent-green);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9998;
-        opacity: 0.5;
-        transition: opacity 0.3s ease;
-      }
-      
-      /* Dark Theme Overrides */
-      .bg-grey-50 {
-        background-color: var(--primary-dark) !important;
-      }
-      
-      .bg-white {
-        background-color: var(--card-bg) !important;
-        backdrop-filter: blur(10px);
-      }
-      
-      body {
-        background-color: var(--primary-dark);
-        color: var(--text-light);
-      }
-      
-      /* Glowing Effects */
-      .glow-text {
-        text-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-cyan), 0 0 30px var(--accent-cyan);
-      }
-      
-      .glow-border {
-        box-shadow: 0 0 15px rgba(0, 212, 255, 0.3), inset 0 0 15px rgba(0, 212, 255, 0.1);
-        border: 1px solid rgba(0, 212, 255, 0.3);
-      }
-      
-      .glow-hover:hover {
-        box-shadow: 0 0 25px rgba(0, 255, 136, 0.4), 0 0 50px rgba(0, 255, 136, 0.2);
-        transform: translateY(-2px);
-      }
-      
-      /* Tech Grid Background */
-      .tech-bg {
-        background-image: 
-          linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-        background-size: 50px 50px;
-      }
-      
-      /* Sharp Corners for Masculine Look */
-      .masculine-card {
-        border-radius: 4px !important;
-        border: 1px solid rgba(0, 212, 255, 0.2);
-        background: linear-gradient(145deg, rgba(18, 18, 26, 0.9), rgba(10, 10, 15, 0.95));
-      }
-      
-      .masculine-btn {
-        border-radius: 2px !important;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 600;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .masculine-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transition: left 0.5s ease;
-      }
-      
-      .masculine-btn:hover::before {
-        left: 100%;
-      }
-      
-      /* Progress Bar Dark Theme */
-      .bg-lila {
-        background-color: rgba(0, 212, 255, 0.1) !important;
-      }
-      
-      .bg-primary {
-        background-color: var(--accent-cyan) !important;
-      }
-      
-      .text-primary {
-        color: var(--accent-cyan) !important;
-      }
-      
-      .text-yellow {
-        color: var(--accent-green) !important;
-      }
-      
-      .hover\:text-yellow:hover {
-        color: var(--accent-green) !important;
-      }
-      
-      .group-hover\:bg-yellow {
-        background-color: var(--accent-green) !important;
-      }
-      
-      /* Hero Gradient Dark */
-      .from-hero-gradient-from {
-        background-color: rgba(10, 10, 15, 0.95) !important;
-      }
-      
-      .to-hero-gradient-to {
-        background-color: rgba(18, 18, 26, 0.93) !important;
-      }
-      
-      /* Navigation Dark */
-      nav, .absolute.right-0 {
-        background-color: rgba(10, 10, 15, 0.95) !important;
-        backdrop-filter: blur(10px);
-      }
-      
-      /* Typography */
-      .text-grey-20 {
-        color: var(--text-muted) !important;
-      }
-      
-      .text-grey-10 {
-        color: var(--text-muted) !important;
-      }
-      
-      .text-grey-40 {
-        color: #666 !important;
-      }
-      
-      /* Skill Cards */
-      .skill-card {
-        background: linear-gradient(145deg, rgba(18, 18, 26, 0.9), rgba(10, 10, 15, 0.95));
-        border: 1px solid rgba(0, 212, 255, 0.15);
-        border-radius: 4px;
-        transition: all 0.3s ease;
-      }
-      
-      .skill-card:hover {
-        border-color: var(--accent-cyan);
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-      }
-      
-      .skill-card i {
-        color: var(--accent-cyan);
-      }
-      
-      /* Project Cards */
-      .project-card {
-        background: linear-gradient(145deg, rgba(18, 18, 26, 0.95), rgba(10, 10, 15, 0.98));
-        border: 1px solid rgba(0, 255, 136, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-        transition: all 0.4s ease;
-      }
-      
-      .project-card:hover {
-        border-color: var(--accent-green);
-        box-shadow: 0 10px 40px rgba(0, 255, 136, 0.15);
-        transform: translateY(-5px);
-      }
-      
-      .project-gradient {
-        background: linear-gradient(135deg, rgba(0, 212, 255, 0.8), rgba(0, 255, 136, 0.6));
-      }
-      
-      /* Timeline Dark */
-      .timeline-line {
-        background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-green)) !important;
-      }
-      
-      /* Cert Cards */
-      .cert-card {
-        background: rgba(18, 18, 26, 0.8);
-        border: 1px solid rgba(0, 212, 255, 0.2);
-        border-radius: 4px;
-        transition: all 0.3s ease;
-      }
-      
-      .cert-card:hover {
-        border-color: var(--accent-cyan);
-        transform: translateY(-3px);
-        box-shadow: 0 5px 25px rgba(0, 212, 255, 0.15);
-      }
-      
-      /* CTA Section */
-      .bg-primary {
-        background: linear-gradient(135deg, rgba(10, 10, 15, 0.98), rgba(18, 18, 26, 0.95)) !important;
-      }
-      
-      .bg-yellow {
-        background-color: var(--accent-cyan) !important;
-        color: var(--primary-dark) !important;
-      }
-      
-      .hover\:bg-yellow:hover {
-        background-color: var(--accent-green) !important;
-      }
-      
-      .border-grey-60 {
-        border-color: rgba(0, 212, 255, 0.2) !important;
-      }
-      
-      /* Contact Cards */
-      .contact-card {
-        background: rgba(18, 18, 26, 0.6);
-        border: 1px solid rgba(0, 212, 255, 0.2);
-        transition: all 0.3s ease;
-      }
-      
-      .contact-card:hover {
-        border-color: var(--accent-cyan);
-        background: rgba(18, 18, 26, 0.8);
-      }
-      
-      /* Animations */
-      @keyframes pulse-glow {
-        0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
-        50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.5); }
-      }
-      
-      .pulse-glow {
-        animation: pulse-glow 2s ease-in-out infinite;
-      }
-      
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-      }
-      
-      /* Smooth Scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      /* Custom scrollbar for dark theme */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: var(--primary-dark);
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background: var(--accent-cyan);
-        border-radius: 4px;
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--accent-green);
-      }
-      
-      /* Easing for scroll animations */
-      .scroll-smooth {
-        scroll-behavior: smooth;
-      }
-      
-      /* Ensure sections are properly positioned for smooth scroll */
-      section, div[id] {
-        scroll-margin-top: 80px;
-      }
-    </style>
-  </head>
+        /* Base Styles */
+        :root {
+            --primary-dark: #0a0a0f;
+            --primary: #5540af;
+            --secondary: #facc15;
+            --text-primary: #ffffff;
+            --text-secondary: #e5e7eb;
+            --text-muted: #9ca3af;
+            --bg-dark: #111827;
+            --bg-darker: #0f172a;
+        }
 
-  <body
-    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
-    class="relative tech-bg"
-    x-data="{ mobileMenu: false }"
-  >
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="cursor"></div>
-    <div class="cursor-trail" id="cursor-trail"></div>
-    
-    <script>
-      const cursor = document.getElementById('cursor');
-      const cursorTrail = document.getElementById('cursor-trail');
-      let mouseX = 0, mouseY = 0;
-      let cursorX = 0, cursorY = 0;
-      let trailX = 0, trailY = 0;
-      
-      document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
-      
-      function animate() {
-        cursorX += (mouseX - cursorX) * 0.2;
-        cursorY += (mouseY - cursorY) * 0.2;
-        trailX += (mouseX - trailX) * 0.1;
-        trailY += (mouseY - trailY) * 0.1;
-        
-        cursor.style.left = cursorX - 10 + 'px';
-        cursor.style.top = cursorY - 10 + 'px';
-        cursorTrail.style.left = trailX - 4 + 'px';
-        cursorTrail.style.top = trailY - 4 + 'px';
-        
-        requestAnimationFrame(animate);
-      }
-      animate();
-      
-      // Hover effect
-      const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select, [onclick]');
-      interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-      });
-    </script>
-    
-    <div id="main" class="relative">
-      <div
-        x-data="{
-          triggerNavItem(id) {
-            const element = document.querySelector(id);
-            if (element) {
-              const offsetTop = element.offsetTop - 80;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-              });
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .role {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-text .description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover {
+            background: #fde047;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-primary);
+            color: var(--bg-dark);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--text-primary);
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-darker);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 1rem;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--bg-darker);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(250, 204, 21, 0.2);
+            color: var(--secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #fde047;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: var(--bg-darker);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--secondary);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--secondary);
+            border: 2px solid var(--bg-darker);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .company {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-muted);
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary);
+        }
+
+        .contact-link i {
+            font-size: 1.25rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
             }
-          },
-          triggerMobileNavItem(id) {
-            mobileMenu = false;
-            setTimeout(() => {
-              this.triggerNavItem(id);
-            }, 300);
-          }
-        }"
-      >
-        <!-- Navigation -->
-        <div class="w-full z-50 top-0 py-3 sm:py-5 absolute">
-          <div class="container flex items-center justify-between">
-            <div>
-              <a href="/">
-                <span class="font-header text-2xl font-bold text-white lg:text-3xl">Ansh<span class="text-yellow">.</span></span>
-              </a>
-            </div>
-            <div class="hidden lg:block">
-              <ul class="flex items-center">
-                <li class="group pl-6">
-                  <span
-                    @click="triggerNavItem('#about')"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >About</span>
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                </li>
-                <li class="group pl-6">
-                  <span
-                    @click="triggerNavItem('#skills')"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Skills</span>
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                </li>
-                <li class="group pl-6">
-                  <span
-                    @click="triggerNavItem('#projects')"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Projects</span>
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                </li>
-                <li class="group pl-6">
-                  <span
-                    @click="triggerNavItem('#experience')"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Experience</span>
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                </li>
-                <li class="group pl-6">
-                  <span
-                    @click="triggerNavItem('#certifications')"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Certifications</span>
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                </li>
-                <li class="group pl-6">
-                  <span
-                    @click="triggerNavItem('#contact')"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Contact</span>
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                </li>
-              </ul>
-            </div>
-            <div class="block lg:hidden">
-              <button @click="mobileMenu = true">
-                <i class="bx bx-menu text-4xl text-white"></i>
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <!-- Mobile Navigation -->
-        <div
-          class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
-          :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
-        >
-          <div class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
-            <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false">
-              <img src="assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
-            </button>
-            <ul class="mt-8 flex flex-col">
-              <li class="py-2">
-                <span @click="triggerMobileNavItem('#about')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
-              </li>
-              <li class="py-2">
-                <span @click="triggerMobileNavItem('#skills')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skills</span>
-              </li>
-              <li class="py-2">
-                <span @click="triggerMobileNavItem('#projects')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Projects</span>
-              </li>
-              <li class="py-2">
-                <span @click="triggerMobileNavItem('#experience')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Experience</span>
-              </li>
-              <li class="py-2">
-                <span @click="triggerMobileNavItem('#certifications')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Certifications</span>
-              </li>
-              <li class="py-2">
-                <span @click="triggerMobileNavItem('#contact')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
-              </li>
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <h2 style="color: var(--secondary); font-family: 'Raleway', sans-serif;">AG</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-          </div>
         </div>
-      </div>
+    </nav>
 
-      <!-- Hero Section -->
-      <div class="relative bg-cover bg-center bg-no-repeat py-8" id="hero" style="background-image: url(assets/images/preview.jpg)">
-        <div class="absolute inset-0 z-20 bg-black/60"></div>
-        <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
-          <div class="flex flex-col items-center justify-center lg:flex-row">
-            <div class="rounded-full border-8 border-primary shadow-xl">
-              <img src="assets/images/ansh-gupta.jpg" class="h-48 rounded-full sm:h-56" alt="Ansh Gupta" />
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Ansh Gupta</h1>
+                    <div class="role">Python Backend Developer / Machine Learning Developer</div>
+                    <p class="description">
+                        Backend-focused Python developer experienced in building scalable APIs, machine learning systems, and data-driven applications using FastAPI, PostgreSQL, and modern Python frameworks.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="assets/files/Ansh_Gupta_Resume.pdf" download class="btn btn-secondary">Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/ansh-gupta.jpg" alt="Ansh Gupta">
+                </div>
             </div>
-            <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-              <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl hero-animate">
-                Ansh Gupta
-              </h1>
-              <p class="pt-2 text-center font-header text-xl text-yellow sm:text-left sm:text-2xl hero-animate">
-                Python Backend Developer | ML Enthusiast
-              </p>
-              <p class="pt-4 text-center font-body text-lg text-white sm:text-left lg:text-xl max-w-2xl hero-animate">
-                Backend-focused Python developer experienced in building scalable APIs, machine learning systems, and data-driven applications using FastAPI, PostgreSQL, and modern Python frameworks.
-              </p>
-              <div class="flex flex-col justify-center pt-6 sm:flex-row sm:pt-8 lg:justify-start gap-4 hero-animate">
-                <a @click="triggerNavItem('#projects')" class="masculine-btn bg-yellow px-6 py-3 font-header text-base font-bold text-primary text-center glow-hover cursor-pointer">
-                  View Projects
-                </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets/images/about-me.jpg" alt="About Me">
+                </div>
+                <div class="about-text">
+                    <h3>Python Backend Developer & Machine Learning Enthusiast</h3>
+                    <p>
+                        I am a Computer Science graduate from VIT Bhopal with a strong interest in backend development, machine learning, and scalable software systems.
+                    </p>
+                    <p>
+                        I enjoy building production-ready applications using Python and modern frameworks like FastAPI. My experience includes developing REST APIs, implementing authentication systems, and designing database structures.
+                    </p>
+                    <p>
+                        Alongside backend development, I also work on machine learning projects where I build data pipelines, train models, and analyze datasets to extract meaningful insights.
+                    </p>
+                    <p>
+                        I am always eager to learn new technologies and build systems that solve real-world problems.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bx bx-code-alt"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Core programming language for backend and ML development</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bx bx-server"></i>
+                    </div>
+                    <h3>FastAPI</h3>
+                    <p>Modern Python web framework for building APIs</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bx bx-data"></i>
+                    </div>
+                    <h3>PostgreSQL</h3>
+                    <p>Relational database for scalable applications</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bx bx-brain"></i>
+                    </div>
+                    <h3>Machine Learning</h3>
+                    <p>Building ML models and data processing pipelines</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bx bx-shape-polygon"></i>
+                    </div>
+                    <h3>TensorFlow</h3>
+                    <p>Deep learning framework for neural networks</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bx bx-line-chart"></i>
+                    </div>
+                    <h3>Scikit-learn</h3>
+                    <p>Machine learning library for data analysis</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bx bx-git-branch"></i>
+                    </div>
+                    <h3>Git</h3>
+                    <p>Version control and collaborative development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="assets/images/bike-tribe.jpg" alt="Bike Tribe Backend" class="project-image">
+                    <div class="project-content">
+                        <h3>Bike Tribe Backend</h3>
+                        <p>Backend system for a bike riders community platform with real-time interactions and WebSocket integration.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">WebSockets</span>
+                        </div>
+                        <a href="https://github.com/AnshGupta-77/Bike-Tribe" target="_blank" class="project-link">
+                            <i class="bx bxl-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/ai-resume-parser.jpg" alt="AI Resume Parser" class="project-image">
+                    <div class="project-content">
+                        <h3>AI Resume Parser</h3>
+                        <p>NLP-based system for automatic resume classification and job role prediction using machine learning.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">TF-IDF</span>
+                        </div>
+                        <a href="https://github.com/AnshGupta-77/ai-resume-parser" target="_blank" class="project-link">
+                            <i class="bx bxl-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/liver.jpg" alt="Liver Disease Prediction" class="project-image">
+                    <div class="project-content">
+                        <h3>Liver Disease Prediction</h3>
+                        <p>ML system for predicting liver disease risk using clinical data and classification models.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Matplotlib</span>
+                        </div>
+                        <a href="https://github.com/AnshGupta-77/Liver_disease_prediction_model" target="_blank" class="project-link">
+                            <i class="bx bxl-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section certifications" id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="bx bx-certification"></i>
+                    </div>
+                    <h3>Python for Machine Learning</h3>
+                    <p>Great Learning</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="bx bx-cloud"></i>
+                    </div>
+                    <h3>Cloud Computing</h3>
+                    <p>NPTEL</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="bx bx-data"></i>
+                    </div>
+                    <h3>Python and SQL for Data Science</h3>
+                    <p>Scaler</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="bx bx-code-curly"></i>
+                    </div>
+                    <h3>API Development with Python</h3>
+                    <p>freeCodeCamp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Python Backend Developer</h3>
+                        <div class="company">Cyber Elite Pvt. Ltd.</div>
+                        <div class="date">Oct 2025 – Jan 2026</div>
+                        <p>
+                            Worked as a Python backend developer, contributing to building and improving web application components. Developed REST APIs, implemented authentication systems, and optimized database queries for better performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p>
+                    Feel free to reach out if you'd like to collaborate, discuss projects, or opportunities. I'm always open to new challenges and interesting conversations.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:ansh.gupta0625@gmail.com" class="contact-link">
+                        <i class="bx bx-envelope"></i> ansh.gupta0625@gmail.com
+                    </a>
+                    <a href="https://github.com/AnshGupta-77" target="_blank" class="contact-link">
+                        <i class="bx bxl-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/ansh-gupta-586643347/" target="_blank" class="contact-link">
+                        <i class="bx bxl-linkedin"></i> LinkedIn
+                    </a>
+                </div>
                 <a href="assets/files/Ansh_Gupta_Resume.pdf" download class="btn btn-primary">
-                  Download Resume
+                    <i class="bx bx-download"></i> Download Resume
                 </a>
-                <a href="assets/files/Ansh_Gupta_Resume.pdf" download class="masculine-btn bg-primary px-6 py-3 font-header text-base font-bold text-white text-center glow-hover">
-                  Hire Me
-                </a>
-              </div>
-              <div class="flex items-center justify-center pt-6 sm:justify-start">
-                <a href="https://github.com/AnshGupta-77" target="_blank" class="mr-4">
-                  <i class="bx bxl-github text-3xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/ansh-gupta-586643347/" target="_blank" class="mr-4">
-                  <i class="bx bxl-linkedin text-3xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="mailto:ansh.gupta0625@gmail.com" class="mr-4">
-                  <i class="bx bx-envelope text-3xl text-white hover:text-yellow"></i>
-                </a>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-
-      
-      <!-- About Me Section -->
-      <div class="relative bg-cover bg-center bg-no-repeat" id="about" style="background-image: url(assets/images/about-me.jpg)">
-        <div class="absolute inset-0 bg-black/70"></div>
-        <div class="container relative z-10 flex flex-col items-center py-16 md:py-20 lg:flex-row">
-          <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
-            <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-              About Me
-            </h2>
-            <h4 class="pt-6 font-header text-xl font-medium text-grey-20 sm:text-2xl lg:text-3xl">
-              Python Backend Developer & Machine Learning Enthusiast
-            </h4>
-            <p class="pt-6 font-body leading-relaxed text-grey-20">
-              I am a Computer Science graduate from <strong>VIT Bhopal</strong> with a strong interest in backend development, machine learning, and scalable software systems.
-            </p>
-            <p class="pt-4 font-body leading-relaxed text-grey-20">
-              I enjoy building production-ready applications using Python and modern frameworks like FastAPI. My experience includes developing REST APIs, implementing authentication systems, and designing database structures.
-            </p>
-            <p class="pt-4 font-body leading-relaxed text-grey-20">
-              Alongside backend development, I also work on machine learning projects where I build data pipelines, train models, and analyze datasets to extract meaningful insights.
-            </p>
-            <p class="pt-4 font-body leading-relaxed text-grey-20">
-              I am always eager to learn new technologies and build systems that solve real-world problems.
-            </p>
-            <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
-              <div class="flex items-center justify-center sm:justify-start">
-                <p class="font-body text-lg font-semibold uppercase text-grey-20">Connect with me</p>
-                <div class="hidden sm:block">
-                  <i class="bx bx-chevron-right text-2xl text-primary"></i>
-                </div>
-              </div>
-              <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                <a href="https://github.com/AnshGupta-77" target="_blank">
-                  <i class="bx bxl-github text-2xl text-primary hover:text-yellow"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/ansh-gupta-586643347/" target="_blank" class="pl-4">
-                  <i class="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
-                </a>
-                <a href="mailto:ansh.gupta0625@gmail.com" class="pl-4">
-                  <i class="bx bx-envelope text-2xl text-primary hover:text-yellow"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-            <h3 class="font-header text-2xl font-bold uppercase text-primary pb-6">Core Competencies</h3>
-            <div>
-              <div class="flex items-end justify-between">
-                <h4 class="font-body font-semibold uppercase text-grey-20">Backend Development (FastAPI, REST APIs)</h4>
-                <h3 class="font-body text-3xl font-bold text-primary">90%</h3>
-              </div>
-              <div class="mt-2 h-3 w-full rounded-full bg-lila">
-                <div class="h-3 rounded-full bg-primary" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <div class="flex items-end justify-between">
-                <h4 class="font-body font-semibold uppercase text-grey-20">Python Programming</h4>
-                <h3 class="font-body text-3xl font-bold text-primary">85%</h3>
-              </div>
-              <div class="mt-2 h-3 w-full rounded-full bg-lila">
-                <div class="h-3 rounded-full bg-primary" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <div class="flex items-end justify-between">
-                <h4 class="font-body font-semibold uppercase text-grey-20">Machine Learning</h4>
-                <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
-              </div>
-              <div class="mt-2 h-3 w-full rounded-full bg-lila">
-                <div class="h-3 rounded-full bg-primary" style="width: 80%"></div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <div class="flex items-end justify-between">
-                <h4 class="font-body font-semibold uppercase text-grey-20">Database Design (PostgreSQL, SQL)</h4>
-                <h3 class="font-body text-3xl font-bold text-primary">85%</h3>
-              </div>
-              <div class="mt-2 h-3 w-full rounded-full bg-lila">
-                <div class="h-3 rounded-full bg-primary" style="width: 85%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skills Section -->
-      <div class="container py-16 md:py-20" id="skills">
-        <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-          Technical Skills
-        </h2>
-        <h3 class="pt-6 text-center font-header text-xl font-medium text-grey-20 sm:text-2xl lg:text-3xl">
-          Core Technologies & Expertise
-        </h3>
-        <div class="max-w-3xl mx-auto pt-10 space-y-6">
-          <!-- Python -->
-          <div class="skill-progress">
-            <div class="flex items-end justify-between mb-2">
-              <h4 class="font-body font-semibold uppercase text-grey-20">Python</h4>
-              <h3 class="font-body text-2xl font-bold text-primary">85%</h3>
-            </div>
-            <div class="h-3 w-full rounded-full bg-grey-70">
-              <div class="skill-bar h-3 rounded-full bg-primary" data-width="85%"></div>
-            </div>
-          </div>
-          
-          <!-- FastAPI -->
-          <div class="skill-progress">
-            <div class="flex items-end justify-between mb-2">
-              <h4 class="font-body font-semibold uppercase text-grey-20">FastAPI</h4>
-              <h3 class="font-body text-2xl font-bold text-primary">80%</h3>
-            </div>
-            <div class="h-3 w-full rounded-full bg-grey-70">
-              <div class="skill-bar h-3 rounded-full bg-primary" data-width="80%"></div>
-            </div>
-          </div>
-          
-          <!-- PostgreSQL -->
-          <div class="skill-progress">
-            <div class="flex items-end justify-between mb-2">
-              <h4 class="font-body font-semibold uppercase text-grey-20">PostgreSQL</h4>
-              <h3 class="font-body text-2xl font-bold text-primary">75%</h3>
-            </div>
-            <div class="h-3 w-full rounded-full bg-grey-70">
-              <div class="skill-bar h-3 rounded-full bg-primary" data-width="75%"></div>
-            </div>
-          </div>
-          
-          <!-- Machine Learning -->
-          <div class="skill-progress">
-            <div class="flex items-end justify-between mb-2">
-              <h4 class="font-body font-semibold uppercase text-grey-20">Machine Learning</h4>
-              <h3 class="font-body text-2xl font-bold text-primary">70%</h3>
-            </div>
-            <div class="h-3 w-full rounded-full bg-grey-70">
-              <div class="skill-bar h-3 rounded-full bg-primary" data-width="70%"></div>
-            </div>
-          </div>
-          
-          <!-- TensorFlow -->
-          <div class="skill-progress">
-            <div class="flex items-end justify-between mb-2">
-              <h4 class="font-body font-semibold uppercase text-grey-20">TensorFlow</h4>
-              <h3 class="font-body text-2xl font-bold text-primary">65%</h3>
-            </div>
-            <div class="h-3 w-full rounded-full bg-grey-70">
-              <div class="skill-bar h-3 rounded-full bg-primary" data-width="65%"></div>
-            </div>
-          </div>
-          
-          <!-- Scikit-learn -->
-          <div class="skill-progress">
-            <div class="flex items-end justify-between mb-2">
-              <h4 class="font-body font-semibold uppercase text-grey-20">Scikit-learn</h4>
-              <h3 class="font-body text-2xl font-bold text-primary">70%</h3>
-            </div>
-            <div class="h-3 w-full rounded-full bg-grey-70">
-              <div class="skill-bar h-3 rounded-full bg-primary" data-width="70%"></div>
-            </div>
-          </div>
-          
-          <!-- Git -->
-          <div class="skill-progress">
-            <div class="flex items-end justify-between mb-2">
-              <h4 class="font-body font-semibold uppercase text-grey-20">Git</h4>
-              <h3 class="font-body text-2xl font-bold text-primary">85%</h3>
-            </div>
-            <div class="h-3 w-full rounded-full bg-grey-70">
-              <div class="skill-bar h-3 rounded-full bg-primary" data-width="85%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projects Section -->
-      <div class="relative bg-cover bg-center bg-no-repeat bg-fixed" id="projects" style="background-image: url(assets/images/project-bg.jpg)">
-        <div class="absolute inset-0 bg-black/80"></div>
-        <div class="container relative z-10 py-16 md:py-20">
-          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            Featured Projects
-          </h2>
-          <h3 class="pt-6 text-center font-header text-xl font-medium text-grey-20 sm:text-2xl lg:text-3xl">
-            Here's what I've built
-          </h3>
-          
-          <!-- Horizontal Scroll Project Gallery -->
-          <div class="project-gallery mt-12 overflow-hidden">
-            <div class="project-track flex gap-8 transition-transform duration-700 ease-out">
-              
-              <!-- Project 1: Bike Tribe Backend -->
-              <div class="project-card flex-shrink-0 w-80 bg-grey-90 rounded-lg overflow-hidden">
-                <div class="project-image-container relative h-48 overflow-hidden">
-                  <img src="assets/images/bike-tribe.jpg" alt="Bike Tribe App" class="project-image w-full h-full object-cover" />
-                  <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
-                    <div class="project-actions flex gap-4">
-                      <a href="https://github.com/AnshGupta-77/Bike-Tribe" target="_blank" class="bg-yellow text-primary px-4 py-2 rounded font-semibold hover:bg-white transition-colors">
-                        <i class="bx bxl-github mr-1"></i> Code
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-6">
-                  <h3 class="font-header text-xl font-bold text-primary">Bike Tribe Backend</h3>
-                  <p class="pt-2 font-body text-sm text-grey-20">
-                    Backend system for a bike riders community platform with real-time interactions.
-                  </p>
-                  <div class="flex flex-wrap gap-2 pt-4">
-                    <span class="rounded bg-grey-50 px-3 py-1 text-xs font-semibold text-primary">FastAPI</span>
-                    <span class="rounded bg-grey-50 px-3 py-1 text-xs font-semibold text-primary">PostgreSQL</span>
-                    <span class="rounded bg-grey-50 px-3 py-1 text-xs font-semibold text-primary">JWT</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 2: AI Resume Parser -->
-              <div class="project-card flex-shrink-0 w-80 bg-grey-90 rounded-lg overflow-hidden">
-                <div class="project-image-container relative h-48 overflow-hidden">
-                  <img src="assets/images/ai-resume-parser.jpg" alt="AI Resume Parser" class="project-image w-full h-full object-cover" />
-                  <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
-                    <div class="project-actions flex gap-4">
-                      <a href="https://github.com/AnshGupta-77/ai-resume-parser" target="_blank" class="bg-yellow text-primary px-4 py-2 rounded font-semibold hover:bg-white transition-colors">
-                        <i class="bx bxl-github mr-1"></i> Code
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-6">
-                  <h3 class="font-header text-xl font-bold text-primary">AI Resume Parser</h3>
-                  <p class="pt-2 font-body text-sm text-grey-20">
-                    NLP-based system for automatic resume classification and job role prediction.
-                  </p>
-                  <div class="flex flex-wrap gap-2 pt-4">
-                    <span class="rounded bg-grey-50 px-3 py-1 text-xs font-semibold text-primary">Python</span>
-                    <span class="rounded bg-grey-50 px-3 py-1 text-xs font-semibold text-primary">Scikit-learn</span>
-                    <span class="rounded bg-grey-50 px-3 py-1 text-xs font-semibold text-primary">NLTK</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 3: Liver Disease Prediction -->
-              <div class="project-card flex-shrink-0 w-80 bg-grey-90 rounded-lg overflow-hidden">
-                <div class="project-image-container relative h-48 overflow-hidden">
-                  <img src="assets/images/liver.jpg" alt="Liver Disease Prediction" class="project-image w-full h-full object-cover" />
-                  <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
-                    <div class="project-actions flex gap-4">
-                      <a href="https://github.com/AnshGupta-77/Liver_disease_prediction_model" target="_blank" class="bg-yellow text-primary px-4 py-2 rounded font-semibold hover:bg-white transition-colors">
-                        <i class="bx bxl-github mr-1"></i> Code
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-6">
-                  <h3 class="font-header text-xl font-bold text-primary">Liver Disease Prediction</h3>
-                  <p class="pt-2 font-body text-sm text-grey-20">
-                    ML system for predicting liver disease risk using clinical data and classification models.
-                  </p>
-                  <div class="flex flex-wrap gap-2 pt-4">
-                    <span class="rounded bg-grey-50 px-3 py-1 text-xs font-semibold text-primary">Python</span>
-                    <span class="rounded bg-grey-50 px-3 py-1 text-xs font-semibold text-primary">Pandas</span>
-                    <span class="rounded bg-grey-50 px-3 py-1 text-xs font-semibold text-primary">Scikit-learn</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Scroll Indicator -->
-          <div class="flex justify-center mt-8 space-x-2">
-            <div class="scroll-dot w-2 h-2 rounded-full bg-primary opacity-50 transition-opacity duration-300"></div>
-            <div class="scroll-dot w-2 h-2 rounded-full bg-primary opacity-50 transition-opacity duration-300"></div>
-            <div class="scroll-dot w-2 h-2 rounded-full bg-primary opacity-50 transition-opacity duration-300"></div>
-          </div>
-        </div>
-      </div>
-
-      
-      <!-- Experience Section -->
-      <div class="container py-16 md:py-20" id="experience">
-        <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-          Work Experience
-        </h2>
-        <h3 class="pt-6 text-center font-header text-xl font-medium text-grey-20 sm:text-2xl lg:text-3xl">
-          Where I've worked
-        </h3>
-        <div class="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
-            <span class="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 timeline-line md:block"></span>
-          <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-            <div class="md:w-2/5">
-              <div class="flex justify-center md:justify-start">
-                <span class="shrink-0">
-                  <div class="h-16 w-16 rounded bg-primary flex items-center justify-center">
-                    <i class="bx bx-building text-3xl text-white"></i>
-                  </div>
-                </span>
-                <div class="relative ml-3 hidden w-full md:block">
-                  <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-                </div>
-              </div>
-            </div>
-            <div class="md:w-3/5">
-              <div class="relative flex md:pl-18">
-                <span class="absolute left-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-                <div class="mt-1 flex">
-                  <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
-                  <div class="md:-mt-1 md:pl-8">
-                    <span class="block font-body font-bold text-grey-40">Oct 2025 – Jan 2026</span>
-                    <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Python Backend Developer</span>
-                    <span class="block font-body text-grey-30 font-semibold">Cyber Elite Pvt. Ltd.</span>
-                    <div class="pt-2">
-                      <span class="block font-body text-grey-20">
-                        • Worked as a Python backend developer, contributing to building and improving web application components.<br/>
-                        • Collaborated with development teams to integrate APIs and optimize application workflows.<br/>
-                        • Gained practical experience with real-world software development, agile workflows, and backend integration.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Certifications Section -->
-      <div class="relative bg-cover bg-center bg-no-repeat" id="certifications">
-        <div class="absolute inset-0 bg-black/75"></div>
-        <div class="container relative z-10 py-16 md:py-20">
-          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            Certifications
-          </h2>
-          <h3 class="pt-6 text-center font-header text-xl font-medium text-grey-20 sm:text-2xl lg:text-3xl">
-            Professional learning and credentials
-          </h3>
-          <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="cert-card px-6 py-8">
-              <div class="mx-auto h-16 w-16 text-center">
-                <i class="bx bx-certification text-4xl text-primary"></i>
-              </div>
-              <h3 class="pt-6 text-center text-base font-semibold text-primary">
-                Python for Machine Learning
-              </h3>
-              <p class="text-center text-sm text-grey-20 pt-2">Great Learning</p>
-            </div>
-            <div class="cert-card px-6 py-8">
-              <div class="mx-auto h-16 w-16 text-center">
-                <i class="bx bx-cloud text-4xl text-primary"></i>
-              </div>
-              <h3 class="pt-6 text-center text-base font-semibold text-primary">
-                Cloud Computing
-              </h3>
-              <p class="text-center text-sm text-grey-20 pt-2">NPTEL</p>
-            </div>
-            <div class="cert-card px-6 py-8">
-              <div class="mx-auto h-16 w-16 text-center">
-                <i class="bx bx-data text-4xl text-primary"></i>
-              </div>
-              <h3 class="pt-6 text-center text-base font-semibold text-primary">
-                Python and SQL for Data Science
-              </h3>
-              <p class="text-center text-sm text-grey-20 pt-2">Scaler</p>
-            </div>
-            <div class="cert-card px-6 py-8">
-              <div class="mx-auto h-16 w-16 text-center">
-                <i class="bx bx-code-curly text-4xl text-primary"></i>
-              </div>
-              <h3 class="pt-6 text-center text-base font-semibold text-primary">
-                API Development with Python
-              </h3>
-              <p class="text-center text-sm text-grey-20 pt-2">freeCodeCamp</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Section -->
-      <div class="relative bg-cover bg-center bg-no-repeat py-16 md:py-20" id="contact">
-        <div class="absolute inset-0 bg-black/70"></div>
-        <div class="container relative z-10">
-          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            Get In Touch
-          </h2>
-          <h4 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
-            Let's collaborate on your next project
-          </h4>
-          <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
-            <p class="font-body text-grey-10">
-              Feel free to reach out if you'd like to collaborate, discuss projects, or opportunities. I'm always open to new challenges and interesting conversations.
-            </p>
-          </div>
-        <div class="flex flex-col pt-16 lg:flex-row">
-          <div class="contact-card w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 contact-glow">
-            <div class="flex items-center justify-center">
-              <i class="bx bx-envelope text-2xl text-grey-40 glow-icon"></i>
-              <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">Email</p>
-            </div>
-            <p class="pt-2 text-center font-body font-bold text-primary lg:text-lg">
-              <a href="mailto:ansh.gupta0625@gmail.com" class="hover:text-yellow">ansh.gupta0625@gmail.com</a>
-            </p>
-          </div>
-          <div class="contact-card w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2 contact-glow">
-            <div class="flex items-center justify-center">
-              <i class="bx bxl-github text-2xl text-grey-40 glow-icon"></i>
-              <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">GitHub</p>
-            </div>
-            <p class="pt-2 text-center font-body font-bold text-primary lg:text-lg">
-              <a href="https://github.com/AnshGupta-77" target="_blank" class="hover:text-yellow">github.com/AnshGupta-77</a>
-            </p>
-          </div>
-          <div class="contact-card w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2 contact-glow">
-            <div class="flex items-center justify-center">
-              <i class="bx bxl-linkedin text-2xl text-grey-40 glow-icon"></i>
-              <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">LinkedIn</p>
-            </div>
-            <p class="pt-2 text-center font-body font-bold text-primary lg:text-lg">
-              <a href="https://www.linkedin.com/in/ansh-gupta-586643347/" target="_blank" class="hover:text-yellow">linkedin.com/in/ansh-gupta-586643347</a>
-            </p>
-          </div>
-        </div>
-        <div class="flex justify-center pt-10">
-          <a href="assets/files/Ansh_Gupta_Resume.pdf" download class="masculine-btn bg-yellow px-8 py-4 font-header text-lg font-bold text-primary hover:bg-secondary flex items-center gap-2 contact-glow">
-            <i class="bx bx-download"></i>
-            Download Resume
-          </a>
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24" style="background-image: url(assets/images/bg-cta.jpg)">
-        <div class="container relative z-30">
-          <h3 class="text-center font-header text-3xl uppercase leading-tight tracking-wide text-white sm:text-4xl lg:text-5xl">
-            Ready to build something <span class="font-bold">amazing?</span>
-          </h3>
-          <p class="text-center text-white pt-4 font-body text-lg">
-            Let's discuss how I can help with your next backend or ML project.
-          </p>
-          <div class="flex justify-center mt-8">
-            <a href="mailto:ansh.gupta0625@gmail.com" class="rounded bg-yellow px-8 py-3 font-body text-base font-bold uppercase text-primary transition-colors hover:bg-white sm:py-4 md:text-lg">
-              Start a Conversation
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <div class="bg-primary">
-      <div class="container flex flex-col justify-between py-6 sm:flex-row">
-        <p class="text-center font-body text-white md:text-left">
-          © 2026 Ansh Gupta. All rights reserved.
-        </p>
-        <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-          <a href="https://github.com/AnshGupta-77" target="_blank">
-            <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/ansh-gupta-586643347/" target="_blank" class="pl-4">
-            <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-          </a>
-          <a href="mailto:ansh.gupta0625@gmail.com" class="pl-4">
-            <i class="bx bx-envelope text-2xl text-white hover:text-yellow"></i>
-          </a>
+    <footer style="background: var(--bg-darker); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container">
+            <p style="color: var(--text-muted);">© 2026 Ansh Gupta. All rights reserved.</p>
         </div>
-      </div>
-    </div>
+    </footer>
 
+    <!-- Scripts -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/particles.js"></script>
-    <script src="assets/js/scrollAnimations.js"></script>
     <script src="assets/js/projectHover.js"></script>
-  </body>
+    <script src="assets/js/scrollAnimations.js"></script>
+</body>
 </html>
